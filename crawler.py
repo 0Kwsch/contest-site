@@ -47,8 +47,8 @@ for i in range(min_len):
 #    json.dump(contest_list, f, ensure_ascii=False, indent=4)
 
 if len(contest_list) > 0:
-    with open("data.json", "w", encording="utf-8") as f:
-        json.dump(contest_list, f, ensure_ascii=false, indent = 4)
+    with open("data.json", "w", encoding="utf-8") as f:
+        json.dump(contest_list, f, ensure_ascii=false, indent=4)
     print("저장완료")
 else:
     if os.path.exists("data.json"):
