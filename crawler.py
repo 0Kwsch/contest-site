@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
 
 url = "https://www.wevity.com/?c=find&s=1&gub=1"
 
@@ -42,8 +43,18 @@ for i in range(min_len):
     contest_list.append(contest)
 
 # JSON 저장
-with open("data.json", "w", encoding="utf-8") as f:
-    json.dump(contest_list, f, ensure_ascii=False, indent=4)
+# with open("data.json", "w", encoding="utf-8") as f:
+#    json.dump(contest_list, f, ensure_ascii=False, indent=4)
+
+if len(contest_list) > 0:
+    with open("data.json", "w", encording="utf-8") as f:
+        json.dump(contest_list, f, ensure_ascii=false, indent = 4)
+    print("저장완료")
+else:
+    if os.path.exists("data.json"):
+        print(" 크롤링 실패 -> 기존 데이터 유지")
+    else:
+        print(" 데이터 없음 + 기존 파일 없음")
 
 # 콘솔 출력 (액션용)
 print("\n 크롤링 결과\n")
