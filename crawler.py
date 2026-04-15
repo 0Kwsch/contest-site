@@ -1,4 +1,4 @@
-import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 import json
 import os
@@ -10,7 +10,8 @@ headers = {
     "Referer": "https://www.wevity.com/"
 }
 
-response = requests.get(url, headers=headers)
+scraper = cloudscraper.create_scraper()  # requests.get 대신
+response = scraper.get(url)
 
 print("상태코드:", response.status_code)
 print("응답내용:", response.text[:300])
