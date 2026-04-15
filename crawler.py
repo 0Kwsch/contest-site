@@ -18,7 +18,7 @@ titles = soup.select(".tit a")
 
 # 주최 / 마감일
 hosts = soup.select(".organ")
-dates = soup.select(".dday")
+dates = soup.select(".day")
 
 print("디버깅:", len(titles), len(hosts), len(dates))
 
