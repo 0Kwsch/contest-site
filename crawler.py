@@ -11,6 +11,10 @@ headers = {
 }
 
 response = requests.get(url, headers=headers)
+
+print("상태코드:", response.status_code)
+print("응답내용:", response.text[:300])
+
 soup = BeautifulSoup(response.text, "html.parser")
 
 titles = soup.select(".tit a")
